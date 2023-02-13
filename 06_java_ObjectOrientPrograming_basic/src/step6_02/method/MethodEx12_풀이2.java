@@ -2,19 +2,16 @@ package step6_02.method;
 
 import java.util.Arrays;
 
-//23.02.13 12:47 ~ 13:19
-class Ex12_풀이 {
+class Ex12_풀이2 {
 	
 	// 1. 절대값을 리턴하는 myABS 메서드를 만드시오.
 	int myABS(int param) {
-		int a = param;
 		
-		if(a>0) {
-			return a;
+		if(param >0) {
+			return param;
 		}
-		
 		else {
-			return -(a);
+			return -(param);
 		}
 		
 	}
@@ -22,45 +19,42 @@ class Ex12_풀이 {
 	// 2. 이메일에 '@'가 있는지를 체크하는 checkEmailValidation 메서드를 만드시오.
 	boolean checkEmailValidation(String email) {
 		
-		
 		boolean isRun = false;
 		
 		for (int i = 0; i < email.length(); i++) {
 			if('@' == email.charAt(i)) {
 				isRun = true;
 			}
-			
-			
 		}
-		return isRun;
 		
+		
+		return isRun;
 		
 	}
 	
 	// 3. 파일의 확장자를 리턴하는 getFileExtention 메서드를 만드시오.
 	String getFileExtention(String fileName) {
+		int idx = -1;
 		
-		int a = 0;
 		for (int i = 0; i < fileName.length(); i++) {
 			if('.' == fileName.charAt(i)) {
-				a = i;
+				idx = i;
 			}
-			
 		}
 		
+		String a = fileName.substring(idx+1);
 		
+		return a;
 		
-		
-		return fileName.substring(a+1);
-		
+	
 	}
 	
 	// 4. 숫자의 제곱을 계산하여 리턴하는 myPow 메서드를 만드시오.
 	int myPow(int param1 , int param2) {
 		
-		int num = (int)Math.pow(param1, param2);
+		int a = (int)Math.pow(param1, param2);
 		
-		return num;
+		return a;
 		
 	
 	}
@@ -68,18 +62,18 @@ class Ex12_풀이 {
 	// 5. 문자열에 특정 문자의 위치를 리턴하는 myIndexOf 메서드를 만드시오.
 	int myIndexOf(String data , String word) {
 		
-		int index = -1;
+		int idx = -1;
 		
 		for (int i = 0; i < data.length(); i++) {
 			String temp = data.charAt(i)+"";
 			if(temp.equals(word)) {
-				index = i;
-				break;
+				idx = i;
 			}
 		}
 		
-		return index;
+		return idx;
 		
+	
 	}
 	
 	// 6. 문자열에 특정 위치의 문자를 리턴하는 myCharAt 메서드를 만드시오.
@@ -87,19 +81,19 @@ class Ex12_풀이 {
 	// 예시)                      > char[] 변수 = 문자열.toCharArray();
 	char myCharAt(String data , int index) {
 		
-		char[] chrList = data.toCharArray();
-		return chrList[index];
+		char[] a = data.toCharArray();
+		char temp = a[index];
 		
 		
-		
-		
+		return temp;
 		
 	
 	}
 	
 	// 7-1. 문자열의 특정위치부터 끝까지의 잘라진 문자열을 리턴하는 mySubString1 메서드를 만드시오.
 	String mySubString1(String data , int startIndex) {
-		String a  = data.substring(startIndex);
+		String a =data.substring(startIndex);
+		
 		
 		return a;
 		
@@ -109,31 +103,31 @@ class Ex12_풀이 {
 	String mySubString2(String data , int startIndex , int endIndex) {
 		
 		String a = data.substring(startIndex, endIndex);
+		
 		return a;
 		
-	
 	}
 	
 	// 8. 문자열을 특정 키워드로 잘라내어 배열에 담아서 리턴하는 mySplit 메서드를 만드시오.
 	String[] mySplit(String data , String sep) {
 		
+		
 		String[] a = data.split(sep);
 		
 		return a;
 		
+	
 	}
-	
-	
 	
 }
 
 
-public class MethodEx12_풀이 {
+public class MethodEx12_풀이2 {
 
 	public static void main(String[] args) {
 
 		
-		Ex12_풀이 e = new Ex12_풀이();
+		Ex12_풀이2 e = new Ex12_풀이2();
 		
 		// 1. 절대값을 리턴하는 myABS 메서드를 만드시오.
 		System.out.println(e.myABS(3));   // 3
@@ -192,8 +186,6 @@ public class MethodEx12_풀이 {
 		System.out.println(e.mySubString2("200107-1234567", 4 , 6)); // 07
 		System.out.println(e.mySubString2("200107-1234567", 0 , 6)); // 200107
 		System.out.println();
-		
-		
 		
 		// 8. 문자열을 특정 키워드로 잘라내어 배열에 담아서 리턴하는 mySplit 메서드를 만드시오.
 		System.out.println(Arrays.toString(e.mySplit("a,b,c", ",")));		  // [a, b, c]
