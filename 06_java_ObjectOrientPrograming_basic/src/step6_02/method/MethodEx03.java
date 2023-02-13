@@ -21,6 +21,35 @@ class ReturnEx{
 		
 	}
 	
+	int testReturn() {
+		
+		System.out.println("리턴 전 명령어1");
+		System.out.println("리턴 전 명령어2");
+		System.out.println("리턴 전 명령어3");
+		//return 1,2,3,4,5; return은 only one(복수 x) 
+		return 0;
+		
+		
+		/*if(){
+		 * return 0;
+		 * 
+		 * }
+		 * else{
+		 * 	return 1;
+		 * 
+		 * }
+		 * -> if~else 방식은 가능 왜냐, return이 참, 거짓일 때 하나씩 실행되기 때문.
+		 * 
+		 * */
+		
+		/*
+		System.out.println("리턴 후 명령어1");
+		System.out.println("리턴 후 명령어2");
+		System.out.println("리턴 후 명령어3");
+		
+		*/ //return을 만나는 순간 메서드는 종료된다.
+	}
+	
 }
 
 
@@ -47,6 +76,8 @@ public class MethodEx03 {
 		score2 = test.setScore2(score2);
 		
 		System.out.println("메서드 호출 후: "+score2);
+		
+		
 	}
 
 }
