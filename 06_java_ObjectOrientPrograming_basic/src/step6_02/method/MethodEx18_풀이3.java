@@ -54,6 +54,53 @@ class SpeedGame_풀이3 {
 	}
 	
 	//화면 출력하기
+	void showCard() {
+		for (int i = 0; i < front.length; i++) {
+			for (int j = 0; j < front[i].length; j++) {
+				System.out.print(front[i][j] + "\t");
+			}
+			System.out.println();
+			System.out.println();
+		}
+	}
+	//입력받기
+	void selectCard() {
+		
+		System.out.println("y입력: ");
+		int yIdx = scan.nextInt();
+		
+		System.out.println("x입력: ");
+		int xIdx = scan.nextInt();
+		
+		if(num == front[yIdx][xIdx]) {
+			if(num<=9) {
+				front[yIdx][xIdx] = back[yIdx][xIdx];
+			}
+			else {
+				front[yIdx][xIdx] = 0;
+			}
+			
+			num++;
+		}
+	}
+	
+	void run() {
+		setNumber();
+		suffleCard();
+		
+		while(true) {
+			
+			showCard();
+			
+			if(num == 19) {
+				System.out.println("게임종료");
+				break;
+			}
+			
+			selectCard();
+		}
+	}
+	
 	
 	
 }
