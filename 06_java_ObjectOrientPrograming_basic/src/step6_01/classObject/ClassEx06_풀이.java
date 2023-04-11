@@ -1,9 +1,7 @@
 package step6_01.classObject;
 
-import java.util.Scanner;
+import java.util.Random;
 
-
-//23.02.09 14:00 ~ 14:08
 /*
  * # OMR카드 : 클래스 + 변수
  * 1. 배열 answer는 시험문제의 정답지이다.
@@ -32,26 +30,51 @@ class Ex06_풀이{
 public class ClassEx06_풀이 {
 
 	public static void main(String[] args) {
+		Random ran = new Random();
 		
-		Scanner scan = new Scanner(System.in);
-		Ex06_풀이 studentLee = new Ex06_풀이();
+		Ex06_풀이 e = new Ex06_풀이();
 		
-		for (int i = 0; i < studentLee.hgd.length; i++) {
-			System.out.println("답안을 입력하세요(1~5): ");
-			studentLee.score = scan.nextInt();
-			
-			studentLee.hgd[i] = studentLee.score;
-			
+		for (int i = 0; i < e.hgd.length; i++) {
+			e.hgd[i] = ran.nextInt(5)+1;
+		} //e.hgd 배열에 랜덤 값 지정 
+		
+		System.out.println("e.answer배열 요소 ");
+		for (int i = 0; i < e.answer.length; i++) {
+			System.out.print(e.answer[i] + " ");
 		}
+		System.out.println();
 		
-		for (int i = 0; i < studentLee.answer.length; i++) {
-			if(studentLee.hgd[i] == studentLee.answer[i]) {
-				studentLee.answerCnt++;
+		System.out.println("e.hgd배열 요소 ");
+		for (int i = 0; i < e.hgd.length; i++) {
+			System.out.print(e.hgd[i] + " ");
+		}
+		System.out.println();
+		
+		
+		System.out.print("정오표 = ");
+		for (int i = 0; i < e.hgd.length; i++) {
+			if(e.hgd[i] == e.answer[i]) {
+				e.answerCnt ++;
+				System.out.print("O ");
 			}
-			
+			else {
+				System.out.print("X ");
+			}
 		}
+		System.out.println();
 		
-		System.out.println("총 맞춘 정답 수 : " + studentLee.answerCnt);
+		e.score = e.answerCnt *20;
+		System.out.println("점수는 " + e.score + "점 입니다.");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
